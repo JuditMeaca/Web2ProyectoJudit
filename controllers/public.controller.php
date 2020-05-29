@@ -1,0 +1,38 @@
+<?php
+
+require_once 'views/public.view.php';
+
+class PublicController{
+
+    //private $model;
+    private $view;
+
+    public function __construct(){
+
+            
+    }
+
+    public function showHome(){
+
+        $this->view->viewHome();
+    }
+
+    public function showItemsByCategories(){
+
+        $this->view->viewItemsByCategories();
+    }
+
+    public function showDetails(){
+
+        $this->view->viewDetails();
+    }
+
+    public function showError(){
+
+        $this->view->viewError();
+    }
+
+    
+
+
+}
