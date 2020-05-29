@@ -9,6 +9,8 @@ class CategoriesAndItemsController{
 
     public function __construct(){
 
+        $this->view = new CategoriesAndItemsView;
+
             
     }
 

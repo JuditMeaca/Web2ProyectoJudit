@@ -1,6 +1,6 @@
 <?php
 
-class CategoriesAndItemsController{
+class CategoriesAndItemsView{
 
 
     public function viewCategories(){

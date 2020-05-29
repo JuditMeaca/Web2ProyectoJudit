@@ -1,13 +1,16 @@
 <?php
 
+require_once 'controllers/public.controller.php';
+require_once 'controllers/categoriesanditems.controller.php';
+
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 if (empty($_GET['action'])) {
     $_GET['action'] = 'home';
 }
 
-$accion = $_GET['action'];
-$parametros = explode('/', $accion);
+$action = $_GET['action'];
+$parametros = explode('/', $action);
 
 switch ($parameters[0]){
     //Acciones publicas de la pagina
