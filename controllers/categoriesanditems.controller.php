@@ -1,6 +1,16 @@
 <?php
 
+require_once 'views/public.view.php';
+
 class CategoriesAndItemsController{
+
+    //private $model;
+    private $view;
+
+    public function __construct(){
+
+            
+    }
 
     public function showCategories(){
 
