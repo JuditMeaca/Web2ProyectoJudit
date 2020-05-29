@@ -17,11 +17,7 @@ class PublicController{
         $this->view->viewHome();
     }
 
-    public function showItemsByCategories(){
-
-        $this->view->viewItemsByCategories();
-    }
-
+    
     public function showDetails(){
 
         $this->view->viewDetails();

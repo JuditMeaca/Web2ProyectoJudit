@@ -29,7 +29,7 @@ switch ($parameters[0]){
     break;
     
     case 'itemsbycategory':
-        $controller = new PublicController();
+        $controller = new CategoriesAndItemsController();
         $controller -> showItemsByCategories();
     break;
     case 'details':
