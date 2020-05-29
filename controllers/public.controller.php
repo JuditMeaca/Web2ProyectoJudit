@@ -1,17 +1,17 @@
 <?php
 
 require_once 'views/public.view.php';
+require_once 'models/public.model.php';
 
 class PublicController{
 
-    //private $model;
+    private $model;
     private $view;
 
     public function __construct(){
 
         $this->view = new PublicView;
-
-            
+        $this->model = new PublicModel;       
     }
 
     public function showHome(){

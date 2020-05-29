@@ -10,7 +10,7 @@ if (empty($_GET['action'])) {
 }
 
 $action = $_GET['action'];
-$parametros = explode('/', $action);
+$parameters = explode('/', $action);
 
 switch ($parameters[0]){
     //Acciones publicas de la pagina
