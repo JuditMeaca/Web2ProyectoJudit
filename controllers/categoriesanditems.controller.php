@@ -16,13 +16,14 @@ class CategoriesAndItemsController{
     }
 
     public function showCategories(){
-
-        $this->view->viewCategories();
+        
+        $categories=$this->model->getAllCategories();
+        $this->view->viewCategories($categories);
     }
 
     public function showItems(){
-
-        $this->view->viewItems();
+        $items=$this->model->getAllItems();
+        $this->view->viewItems($items);
     }
 
     public function showItemsByCategories(){
