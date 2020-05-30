@@ -48,6 +48,8 @@ switch ($parameters[0]){
     //Acciones de ABM (Administrador)
 
     case 'administrator':
+        $controller = new PublicController();
+        $controller -> showFormAdministrator();
     break;
     case 'addcategorie':
     break;

@@ -23,6 +23,12 @@ class PublicView{
         echo"Esto muestra detalles";
     }
 
+    public function viewFormLogin($error = null){//parametros opcionales, a este metodo lo puedo llamar con o sin parametro
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('formlogin.tpl');
+
+    }
+
     public function viewError(){
         $this->smarty->display('error.tpl');
     }

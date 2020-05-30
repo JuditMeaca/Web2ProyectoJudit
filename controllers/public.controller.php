@@ -25,6 +25,10 @@ class PublicController{
         $this->view->viewDetails();
     }
 
+    public function showFormAdministrator(){
+
+        $this->view->viewFormLogin();
+    }
     public function showError(){
 
         $this->view->viewError();
