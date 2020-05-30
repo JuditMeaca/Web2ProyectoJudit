@@ -3,6 +3,7 @@
 require_once 'views/public.view.php';
 require_once 'models/public.model.php';
 
+
 class PublicController{
 
     private $model;
@@ -20,9 +21,9 @@ class PublicController{
     }
 
     
-    public function showDetails(){
-        //$detail=$this->model->getDetail();
-        $this->view->viewDetails();
+    public function showDetails($iditem){
+        $detail=$this->model->getDetail($iditem);
+        $this->view->viewDetails($detail);
     }
 
     public function showFormAdministrator(){

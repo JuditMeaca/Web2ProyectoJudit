@@ -33,7 +33,7 @@ switch ($parameters[0]){
     break;
     case 'details':
         $controller = new PublicController();
-        $controller -> showDetails();
+        $controller -> showDetails($parametros[1]);
     break;
     
     //Acciones de autentificacion de usuarios

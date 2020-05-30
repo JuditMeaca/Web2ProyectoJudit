@@ -37,4 +37,5 @@ class CategoriesAndItemsModel{
 
         return $items;
     }
+
 }

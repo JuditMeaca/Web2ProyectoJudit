@@ -19,8 +19,10 @@ class PublicView{
         $this->smarty->display('home.tpl');
     }
 
-    public function viewDetails(){
-        echo"Esto muestra detalles";
+    public function viewDetails($detail){
+        var_dump($detail);
+       //$this->smarty->assign('detalle', $detail);
+       //$this->smarty->display('showDetails.tpl');
     }
 
     public function viewFormLogin($error = null){//parametros opcionales, a este metodo lo puedo llamar con o sin parametro
