@@ -38,4 +38,15 @@ class CategoriesAndItemsModel{
         return $items;
     }
 
+    public function getItemsByCategories($id){
+        $db=$this->createConetion();
+
+        $sentencia= $db->prepare("SELECT categories.categories AS categories, items.items, items.
+        product, item.description, items.id_items FROM items INNER JOIN categories ON items.id_categories_fk= categories.id_categories");
+        $sentencia->execute([$id]);
+        $items=$sentencia->fetchAll(PDO::FETCH_OBJ);
+
+        return $items;
+    }
+
 }

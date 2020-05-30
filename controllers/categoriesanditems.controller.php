@@ -26,9 +26,17 @@ class CategoriesAndItemsController{
         $this->view->viewItems($items);
     }
 
-    public function showItemsByCategories(){
+    public function showItemsByCategories($id){
+        $items=$this->model->getItemsByCategories($id);
+        
+        if(!empty($items)){
+            $this->view->viewItemsByCategories($items);
+        }
+        else {
+            $this->view->viewError();
+        }
 
-        $this->view->viewItemsByCategories();
+        
     }
 
 }

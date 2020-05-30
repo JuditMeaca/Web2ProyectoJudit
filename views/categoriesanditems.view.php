@@ -8,8 +8,7 @@ class CategoriesAndItemsView{
     public function __construct(){
         $this->smarty = new Smarty();
         $this->smarty->assign('base_url', BASE_URL);
-        //$username = HelperAuth::userLogged();
-        //$this->smarty->assign('username', $username);
+        
     }
 
 
@@ -24,11 +23,14 @@ class CategoriesAndItemsView{
         $this->smarty->display('showItems.tpl');
     }
 
-    public function viewItemsByCategories(){
-        echo"Esto son items por categorias";
+    public function viewItemsByCategories($items){
+        $this->smarty->assign('products', $items);
+        $this->smarty->display('showitemsbycategories.tpl');
     }
 
-    
+    public function viewError(){
+        $this->smarty->display('error.tpl');
+    }
 
     
 }

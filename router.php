@@ -29,11 +29,11 @@ switch ($parameters[0]){
     break;
     case 'itemsbycategory':
         $controller = new CategoriesAndItemsController();
-        $controller -> showItemsByCategories();
+        $controller -> showItemsByCategories($parameters[1]);
     break;
     case 'details':
         $controller = new PublicController();
-        $controller -> showDetails($parametros[1]);
+        $controller -> showDetails($parameters[1]);
     break;
     
     //Acciones de autentificacion de usuarios

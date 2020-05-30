@@ -21,8 +21,8 @@ class PublicModel{
     public function getDetail($iditem){
         $db=$this->createConetion();
 
-        $sentencia= $db->prepare("SELECT categories.categorie AS categorie, items.id_items, categories.categorie, categories.description, 
-        FROM items INNER JOIN categories 
+        $sentencia= $db->prepare("SELECT categories.categorie AS categorie, items.id_items, categories.categorie, 
+        categories.description, FROM items INNER JOIN categories 
         ON id_categories_fk = items.id_items WHERE categories.id_categories = ?");
         $sentencia->execute([$iditem]);
         $detail=$sentencia->fetch(PDO::FETCH_OBJ);
