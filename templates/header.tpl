@@ -18,7 +18,6 @@
                             <a class="btn btn-light" href="home"> Home </a>
                             <a class="btn btn-light" href="categories"> Categorias </a>
                             <a class="btn btn-light" href="items"> Productos </a>
-                            <a class="btn btn-light" href="administrator"> Administrador </a>
                         </nav>
                     </div>
                 </div>
