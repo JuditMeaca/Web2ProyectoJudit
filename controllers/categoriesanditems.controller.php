@@ -1,6 +1,6 @@
 <?php
 
-require_once 'views/public.view.php';
+require_once 'views/categoriesanditems.view.php';
 require_once 'models/categoriesanditems.model.php';
 
 class CategoriesAndItemsController{

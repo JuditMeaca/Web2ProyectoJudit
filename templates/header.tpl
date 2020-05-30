@@ -16,8 +16,9 @@
                         <nav class="navbar navbar-dark bg-primary">
                             <a class="navbar-brand"  href="home"> Limpito </a>
                             <a class="btn btn-light" href="home"> Home </a>
-                            <a class="btn btn-light" href="areas"> Categorias </a>
-                            <a class="btn btn-light" href="courses"> Productos </a>
+                            <a class="btn btn-light" href="categories"> Categorias </a>
+                            <a class="btn btn-light" href="items"> Productos </a>
+                            <a class="btn btn-light" href="administrator"> Administrador </a>
                         </nav>
                     </div>
                 </div>
