@@ -18,9 +18,7 @@ switch ($parameters[0]){
     case 'home':
         $controller = new PublicController();
         $controller -> showHome();
-    break;
-    
-    
+    break;   
     case 'categories':
         $controller = new CategoriesAndItemsController();
         $controller -> showCategories();
@@ -28,9 +26,7 @@ switch ($parameters[0]){
     case 'items':
         $controller = new CategoriesAndItemsController();
         $controller -> showItems();
-
     break;
-    
     case 'itemsbycategory':
         $controller = new CategoriesAndItemsController();
         $controller -> showItemsByCategories();

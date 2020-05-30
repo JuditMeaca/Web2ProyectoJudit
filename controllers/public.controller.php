@@ -21,7 +21,7 @@ class PublicController{
 
     
     public function showDetails(){
-
+        //$detail=$this->model->getDetail();
         $this->view->viewDetails();
     }
 
