@@ -19,8 +19,9 @@ class CategoriesAndItemsView{
         $this->smarty->display('showCategories.tpl');
     }
 
-    public function viewItems(){
-        echo"Esto muestra los items";
+    public function viewItems($items){
+        $this->smarty->assign('items', $items);
+        $this->smarty->display('showItems.tpl');
     }
 
     public function viewItemsByCategories(){

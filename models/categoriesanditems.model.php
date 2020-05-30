@@ -27,4 +27,14 @@ class CategoriesAndItemsModel{
 
         return $categories;
     }
+
+    public function getAllItems(){
+        $db=$this->createConetion();
+
+        $sentencia= $db->prepare("SELECT * FROM items");
+        $sentencia->execute();
+        $items=$sentencia->fetchAll(PDO::FETCH_OBJ);
+
+        return $items;
+    }
 }
