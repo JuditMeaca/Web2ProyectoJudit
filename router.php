@@ -34,7 +34,33 @@ switch ($parameters[0]){
     case 'details':
         $controller = new PublicController();
         $controller -> showDetails();
-    break;                
+    break;
+    
+    //Acciones de autentificacion de usuarios
+
+    case 'login':
+    break;
+    case 'logout':
+    break;
+    case 'verify':
+    break;
+    
+    //Acciones de ABM (Administrador)
+
+    case 'administrator':
+    break;
+    case 'addcategorie':
+    break;
+    case 'deletecategorie':
+    break;
+    case 'editcategorie':
+    break;
+    case 'additem':
+    break;
+    case 'deleteitem':
+    break;
+    case 'edititem':
+    break;                           
     default:
         $controller = new PublicController();
         $controller -> showError();
