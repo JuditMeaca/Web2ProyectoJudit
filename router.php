@@ -2,6 +2,7 @@
 
 require_once 'controllers/public.controller.php';
 require_once 'controllers/categoriesanditems.controller.php';
+//require_once 'controllers/auth.controller.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -39,10 +40,16 @@ switch ($parameters[0]){
     //Acciones de autentificacion de usuarios
 
     case 'login':
+        $controller= new AuthController();
+        $controller -> login(); 
     break;
     case 'logout':
+        $controller= new AuthController();
+        $controller -> logout();
     break;
     case 'verify':
+        $controller= new AuthController();
+        $controller -> verification();
     break;
     
     //Acciones de ABM (Administrador)

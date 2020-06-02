@@ -23,8 +23,8 @@ class CategoriesAndItemsView{
         $this->smarty->display('showItems.tpl');
     }
 
-    public function viewItemsByCategories($items){
-        $this->smarty->assign('products', $items);
+    public function viewItemsByCategories($item){
+        $this->smarty->assign('products', $item);
         $this->smarty->display('showitemsbycategories.tpl');
     }
 
