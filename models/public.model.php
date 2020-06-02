@@ -18,13 +18,13 @@ class PublicModel{
         return $pdo;
     }
 
-    public function getDetail($iditem){
+    public function getDetail($idproduct){
         $db=$this->createConetion();
 
-        $sentencia= $db->prepare("SELECT categories.categorie AS categorie, items.id_items, categories.categorie, 
-        categories.description, FROM items INNER JOIN categories 
-        ON id_categories_fk = items.id_items WHERE categories.id_categories = ?");
-        $sentencia->execute([$iditem]);
+        $sentencia= $db->prepare("SELECT categories.categories AS categories, items.id_items, 
+        items.product, items.description FROM items INNER JOIN categories ON 
+        items.id_categories_fk = categories.id_categories WHERE items.id_items = ?");
+        $sentencia->execute([$idproduct]);
         $detail=$sentencia->fetch(PDO::FETCH_OBJ);
 
         return $detail;

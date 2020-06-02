@@ -13,4 +13,16 @@ class AuthController{
         $this->view = new PublicView;
         $this->model = new PublicModel;       
     }
+
+    public function login(){
+
+    }
+
+    public function logout(){
+
+    }
+
+    public function verification(){
+        
+    }
 }

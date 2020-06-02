@@ -9,7 +9,7 @@
                     {foreach $categories as $categorie}
                                    <li class="list-group-item"> 
                                    {$categorie->categories}
-                                   <a class="btn btn-light text-dark float-right" href="categories/{$categorie->id_categories}" role="button"> Ver productos </a>
+                                   <a class="btn btn-light text-dark float-right" href="itemsbycategory/{$categorie->id_categories}" role="button"> Ver productos </a>
                                    </li>
                     {/foreach}
                </ul>

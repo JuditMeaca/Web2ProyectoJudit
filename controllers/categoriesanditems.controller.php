@@ -27,10 +27,10 @@ class CategoriesAndItemsController{
     }
 
     public function showItemsByCategories($id){
-        $item=$this->model->getItemsByCategories($id);
+        $items=$this->model->getItemsByCategories($id);
         
-        if(!empty($item)){
-            $this->view->viewItemsByCategories($item);
+        if(!empty($items)){
+            $this->view->viewItemsByCategories($items);
         }
         else {
             $this->view->viewError();

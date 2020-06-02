@@ -1,4 +1,3 @@
-<!--Esta plantilla contiene un header y muestra la barra de navegacion-->
 <!DOCTYPE html>
             <html lang="en">
             <head>

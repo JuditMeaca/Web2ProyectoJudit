@@ -41,8 +41,8 @@ class CategoriesAndItemsModel{
     public function getItemsByCategories($id){
         $db=$this->createConetion();
 
-        $sentencia= $db->prepare("SELECT categories.categories AS categories, item.items, items.
-        product, item.description, items.id_items FROM items INNER JOIN categories ON items.id_categories_fk= categories.id_categories");
+        $sentencia= $db->prepare("SELECT categories.categories AS categories, items.product, items.description, items.id_items FROM items 
+        INNER JOIN categories ON items.id_categories_fk= categories.id_categories WHERE categories.id_categories = ?");
         $sentencia->execute([$id]);
         $items=$sentencia->fetchAll(PDO::FETCH_OBJ);
 
