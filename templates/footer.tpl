@@ -7,7 +7,7 @@
         <h5 class="mb-1">Administrador</h5>
       </li>
       <li class="list-inline-item">
-        <a href="administrator" class="btn btn-outline-dark btn-rounded">Sign up!</a>
+        <a href="formlogin" class="btn btn-outline-dark btn-rounded">Sign up!</a>
       </li>
     </ul>
 

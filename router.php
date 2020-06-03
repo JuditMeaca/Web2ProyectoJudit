@@ -2,7 +2,9 @@
 
 require_once 'controllers/public.controller.php';
 require_once 'controllers/categoriesanditems.controller.php';
-//require_once 'controllers/auth.controller.php';
+require_once 'controllers/auth.controller.php';
+require_once 'controllers/admin.controller.php';
+//require_once 'controllers/abm.controller.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -39,9 +41,9 @@ switch ($parameters[0]){
     
     //Acciones de autentificacion de usuarios
 
-    case 'login':
-        $controller= new AuthController();
-        $controller -> login(); 
+    case 'formlogin':
+        $controller = new PublicController();
+        $controller -> showFormLogin();
     break;
     case 'logout':
         $controller= new AuthController();
@@ -55,21 +57,24 @@ switch ($parameters[0]){
     //Acciones de ABM (Administrador)
 
     case 'administrator':
-        $controller = new PublicController();
-        $controller -> showFormAdministrator();
-    break;
-    case 'addcategorie':
+        $controller = new AdminController();
+        $controller -> administration();
+    /*case 'addcategorie':
     break;
     case 'deletecategorie':
+        $controller = new AdminController();
+        $controller->deleteCategorie($parametros[1]);
     break;
-    case 'editcategorie':
+    /*case 'editcategorie':
     break;
     case 'additem':
     break;
     case 'deleteitem':
+        $controller = new AdminController();
+        $controller -> deleteItem($parametros[1]);
     break;
-    case 'edititem':
-    break;                           
+    /*case 'edititem':
+    break; */                          
     default:
         $controller = new PublicController();
         $controller -> showError();

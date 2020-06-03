@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-12">
                         <nav class="navbar navbar-dark bg-primary">
-                            <a class="navbar-brand"  href="home"> Limpito Administrador</a>
+                            <a class="navbar-brand"  href="home"> Limpito </a>
                             <a class="btn btn-light" href="home"> Volver </a>
                         </nav>
                     </div>

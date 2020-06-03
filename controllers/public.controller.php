@@ -26,7 +26,7 @@ class PublicController{
         $this->view->viewDetails($detail);
     }
 
-    public function showFormAdministrator(){
+    public function showFormLogin(){
 
         $this->view->viewFormLogin();
     }

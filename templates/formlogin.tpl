@@ -1,4 +1,4 @@
-{include 'header.admin.tpl'}
+{include 'header.formlogin.tpl'}
 <div class="container">
     <div class="row">
         <div class="col-12">
