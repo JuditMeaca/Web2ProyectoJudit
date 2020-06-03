@@ -9,7 +9,7 @@
                     {foreach $items as $product}
                                    <li class="list-group-item"> 
                                    {$product->product}
-                                   <a class="btn btn-light text-dark float-right" href="details/{$categories->id_categories}" role="button"> Ver detalles </a>
+                                   <a class="btn btn-light text-dark float-right" href="details/{$product->id_items}" role="button"> Ver detalles </a>
                                    </li>
                     {/foreach}
                </ul>

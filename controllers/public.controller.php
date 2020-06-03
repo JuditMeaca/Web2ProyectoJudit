@@ -21,8 +21,8 @@ class PublicController{
     }
 
     
-    public function showDetails($idproduct){
-        $detail=$this->model->getDetail($idproduct);
+    public function showDetails($id){
+        $detail=$this->model->getDetail($id);
         $this->view->viewDetails($detail);
     }
 
