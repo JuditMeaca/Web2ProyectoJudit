@@ -35,6 +35,30 @@ class PublicController{
         $this->view->viewError();
     }
 
+    public function showCategories(){
+        
+        $categories=$this->model->getAllCategories();
+        $this->view->viewCategories($categories);
+    }
+
+    public function showItems(){
+        $items=$this->model->getAllItems();
+        $this->view->viewItems($items);
+    }
+
+    public function showItemsByCategories($id){
+        $items=$this->model->getItemsByCategories($id);
+        
+        if(!empty($items)){
+            $this->view->viewItemsByCategories($items);
+        }
+        else {
+            $this->view->viewError();
+        }
+
+        
+    }
+
     
 
 

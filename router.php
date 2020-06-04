@@ -1,10 +1,8 @@
 <?php
 
 require_once 'controllers/public.controller.php';
-require_once 'controllers/categoriesanditems.controller.php';
 require_once 'controllers/auth.controller.php';
 require_once 'controllers/admin.controller.php';
-//require_once 'controllers/abm.controller.php';
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -23,15 +21,15 @@ switch ($parameters[0]){
         $controller -> showHome();
     break;   
     case 'categories':
-        $controller = new CategoriesAndItemsController();
+        $controller = new PublicController();
         $controller -> showCategories();
     break;
     case 'items':
-        $controller = new CategoriesAndItemsController();
+        $controller = new PublicController();
         $controller -> showItems();
     break;
     case 'itemsbycategory':
-        $controller = new CategoriesAndItemsController();
+        $controller = new PublicController();
         $controller -> showItemsByCategories($parameters[1]);
     break;
     case 'details':
@@ -59,8 +57,9 @@ switch ($parameters[0]){
     case 'administrator':
         $controller = new AdminController();
         $controller -> administration();
+    break;    
     /*case 'addcategorie':
-    break;
+    break;*/
     case 'deletecategorie':
         $controller = new AdminController();
         $controller->deleteCategorie($parametros[1]);

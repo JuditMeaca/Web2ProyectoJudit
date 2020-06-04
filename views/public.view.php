@@ -19,6 +19,22 @@ class PublicView{
         $this->smarty->display('home.tpl');
     }
 
+    public function viewCategories($categories){
+        //var_dump($categories);
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('showCategories.tpl');
+    }
+
+    public function viewItems($items){
+        $this->smarty->assign('items', $items);
+        $this->smarty->display('showItems.tpl');
+    }
+
+    public function viewItemsByCategories($items){
+        $this->smarty->assign('items', $items);
+        $this->smarty->display('showitemsbycategories.tpl');
+    }
+
     public function viewDetails($detail){
         
        $this->smarty->assign('detail', $detail);

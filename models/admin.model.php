@@ -24,17 +24,17 @@ class AdminModel{
     }
  
  
-    public function delete($id){
+    /*public function delete($id){
         $db = $this->createConection();
     
         $sentencia = $db->prepare("DELETE FROM categories WHERE id_categories = ?");
         $sentencia->execute([$id]);
     }
-
+/*
     public function deleteProduct($idproduct){
         $db = $this->createConection();
     
         $sentencia = $db->prepare("DELETE FROM items WHERE id_items = ?");
         $sentencia->execute([$idproduct]);
-    }
+    }*/
 }

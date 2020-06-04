@@ -2,7 +2,7 @@
 
 class PublicModel{
     
-    private function createConetion(){
+    private function createConection(){
         $host='localhost';
         $userName='root';
         $password='';
@@ -18,8 +18,39 @@ class PublicModel{
         return $pdo;
     }
 
+    public function getAllCategories(){
+        $db=$this->createConection();
+
+        $sentencia= $db->prepare("SELECT * FROM categories ");
+        $sentencia->execute();
+        $categories=$sentencia->fetchAll(PDO::FETCH_OBJ);
+
+        return $categories;
+    }
+
+    public function getAllItems(){
+        $db=$this->createConection();
+
+        $sentencia= $db->prepare("SELECT * FROM items");
+        $sentencia->execute();
+        $items=$sentencia->fetchAll(PDO::FETCH_OBJ);
+
+        return $items;
+    }
+
+    public function getItemsByCategories($id){
+        $db=$this->createConection();
+
+        $sentencia= $db->prepare("SELECT categories.categories AS categories, items.product, items.description, items.id_items FROM items 
+        INNER JOIN categories ON items.id_categories_fk= categories.id_categories WHERE categories.id_categories = ?");
+        $sentencia->execute([$id]);
+        $items=$sentencia->fetchAll(PDO::FETCH_OBJ);
+
+        return $items;
+    }
+
     public function getDetail($id){
-        $db=$this->createConetion();
+        $db=$this->createConection();
 
         $sentencia= $db->prepare("SELECT categories.categories AS categories, items.id_items, 
         items.product, items.description FROM items INNER JOIN categories ON 

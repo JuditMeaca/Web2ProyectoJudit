@@ -1,4 +1,3 @@
-
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -16,7 +15,7 @@
             <a class="btn btn-outline-primary" href="newcategorie" role="button">Nueva Categoria</a>
             </p>
 
-            {foreach $arraycategories as $categorie}
+            {foreach $allcategories as $categorie}
                     <li class="list-group-item">
                         <p>{$categorie->categories}
                         <a class="btn btn-light text-danger float-right" href="deletecatergorie/{$categorie->id_categories}" role="button">
@@ -36,7 +35,7 @@
             </p>
             
             </p>
-            {foreach $arrayitems as $items}
+            {foreach $allitems as $items}
                     <li class="list-group-item">
                         <p>{$items->product}
                         <a class="btn btn-light text-danger float-right" href="deleteitem/{$item->id_items}">Eliminar</a>

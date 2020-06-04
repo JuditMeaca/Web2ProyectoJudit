@@ -13,8 +13,8 @@
 
         //Vista administrador
         public function viewConfiguration($categories, $items){
-            $this->smarty->assign('arraycategories', $categories);
-            $this->smarty->assign('arrayitems', $items);
+            $this->smarty->assign('allcategories', $categories);
+            $this->smarty->assign('allitems', $items);
             $this->smarty->display('admin.configuration.tpl');
         }
     }
