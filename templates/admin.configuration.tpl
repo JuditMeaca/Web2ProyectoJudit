@@ -18,9 +18,9 @@
             {foreach $allcategories as $categorie}
                     <li class="list-group-item">
                         <p>{$categorie->categories}
-                        <a class="btn btn-light text-danger float-right" href="deletecatergorie/{$categorie->id_categories}" role="button">
+                        <a class="btn btn-light text-danger float-right" href="deletecategorie/{$categorie->id_categories}" role="button">
                         Eliminar</a>
-                        <a class="btn btn-light text-dark float-right" href="editcategorie/{$categorie->id_categories}" role="button">
+                        <a class="btn btn-light text-dark float-right" href="formeditcategorie/{$categorie->id_categories}" role="button">
                         Editar</a>
                         </p>
                     </li>

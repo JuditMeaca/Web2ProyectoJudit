@@ -35,7 +35,7 @@ class AuthController{
             header("Location: " . BASE_URL . "administrator");
         }
         else {
-            $this->view->ViewFormLogin('Datos invalidos'); 
+            $this->view->viewFormLogin('Datos invalidos'); 
         }
 
     }

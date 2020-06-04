@@ -17,4 +17,16 @@
             $this->smarty->assign('allitems', $items);
             $this->smarty->display('admin.configuration.tpl');
         }
+
+        public function viewFormCategorie($error = null){
+            $this->smarty->assign('error', $error);
+            $this->smarty->display('admin.formaddcategorie.tpl');
+
+        }
+
+        public function viewFormEditCategorie($categories, $error = null){
+            $this->smarty->assign('error', $error);
+            $this->smarty->assign('categorie', $categories);
+            $this->smarty->display('admin.formEditCategorie.tpl');
+        }
     }
