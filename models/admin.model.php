@@ -36,22 +36,43 @@ class AdminModel{
     public function getCategorie($id){
             $db = $this->createConection();
         
-            $sentencia = $db->prepare("SELECT id_categories, categories FROM `categories` WHERE id_categories = ?");
+            $sentencia = $db->prepare("SELECT id_categories, categories FROM categories WHERE id_categories = ?");
             $sentencia->execute([$id]);
             $categories = $sentencia->fetch(PDO::FETCH_OBJ); 
             
             return $categories;
     
         }
-    public function edit($categorie, $id){
+    public function edit($categories, $id){
             $db = $this->createConection();
         
-            $sentencia = $db->prepare("UPDATE categories SET categories = ? WHERE categories.id_categories = ?");
-            $sentencia->execute([$categorie, $id]);
-            
+            $sentencia=$db->prepare("UPDATE categories SET categories = ? WHERE categories.id_categories = ?");
+            $sentencia->execute([$categories, $id]);
         }    
 
+    public function insertItem($item, $description, $idcategorie){
+        $db = $this->createConection();
+    
+        $sentencia = $db->prepare("INSERT INTO items (product, description, id_categories_fk) VALUES (?,?,?)");
+        $sentencia->execute([$item, $description, $idcategorie]);
     }
+
+    public function deleteItem($iditem){
+        $db = $this->createConection();
+    
+        $sentencia = $db->prepare("DELETE FROM items WHERE items.id_items = ?");
+        $sentencia->execute([$iditem]);
+    }
+    public function editProduct($id,$item, $description, $idcategorie){
+        $db = $this->createConection();
+    
+        $sentencia=$db->prepare("UPDATE items SET product = ?, description = ?, id_categories_fk = ?, WHERE id_items = ?");
+        $sentencia->execute([$item, $description, $id, $idcategorie]);
+        
+        }  
+    }  
+
+    
 /*
     public function deleteProduct($idproduct){
         $db = $this->createConection();

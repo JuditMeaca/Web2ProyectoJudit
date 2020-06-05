@@ -1,13 +1,4 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <nav class="navbar navbar-dark bg-primary">
-                <a class="navbar-brand">Bienvenidx! {$username}</a>
-                <a class="btn btn-light" href="formlogin">Logout</a>
-            </nav>
-        </div>
-    </div>
-</div>
+{include 'admin.header.tpl'}
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -38,8 +29,8 @@
             {foreach $allitems as $items}
                     <li class="list-group-item">
                         <p>{$items->product}
-                        <a class="btn btn-light text-danger float-right" href="deleteitem/{$item->id_items}">Eliminar</a>
-                        <a class="btn btn-light text-dark float-right" href="edititem/{$item->id_items}">Editar</a>
+                        <a class="btn btn-light text-danger float-right" href="deleteitem/{$items->id_items}">Eliminar</a>
+                        <a class="btn btn-light text-dark float-right" href="formedititem/{$items->id_items}">Editar</a>
                         </p>
                     </li>
             {/foreach}
@@ -49,4 +40,4 @@
 </div>
 </div>
 </div>
-
+</body>

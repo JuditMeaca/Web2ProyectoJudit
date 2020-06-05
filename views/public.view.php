@@ -10,6 +10,8 @@ class PublicView{
 
         $this->smarty= new Smarty();
         $this->smarty->assign('base_url', BASE_URL);
+        $username = AuthHelper::userLogged();
+        $this->smarty->assign('username', $username);
         
     }
 

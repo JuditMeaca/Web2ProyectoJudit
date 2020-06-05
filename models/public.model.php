@@ -38,6 +38,8 @@ class PublicModel{
         return $items;
     }
 
+    
+
     public function getItemsByCategories($id){
         $db=$this->createConection();
 

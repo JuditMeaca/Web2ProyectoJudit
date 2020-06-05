@@ -29,4 +29,15 @@
             $this->smarty->assign('categorie', $categories);
             $this->smarty->display('admin.formEditCategorie.tpl');
         }
+
+        public function viewFormAddItem($categories){
+            $this->smarty->assign('categories', $categories);
+            $this->smarty->display('admin.formadditem.tpl');
+        }
+
+        public function viewFormEditItem ($categories, $item){
+            $this->smarty->assign('item', $item);
+            $this->smarty->assign('allcategories', $categories);
+            $this->smarty->display('admin.formEdititem.tpl');
+        }
     }

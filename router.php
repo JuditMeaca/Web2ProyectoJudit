@@ -78,26 +78,26 @@ switch ($parameters[0]){
         $controller = new AdminController();
         $controller->editCategorie();
     break; 
-    /*case 'newcategorie':
+    case 'newitem':
         $controller = new AdminController();
-        $controller -> formNewCategorie();
+        $controller -> formNewItem();
     break;
-    case 'addcategorie':
+    case 'additem':
         $controller = new AdminController();
-        $controller -> addCategorie();
+        $controller -> addItem();
     break;    
-    case 'deletecategorie':
+    case 'deleteitem':
         $controller = new AdminController();
-        $controller->deleteCategorie($parametros[1]);
+        $controller->deleteItem($parameters[1]);
     break;
-    case 'formeditcategorie':
+    case 'formedititem':
         $controller = new AdminController();
-        $controller->formEditCategorie($parametros[1]);
+        $controller->formEditItem($parameters[1]);
     break;
-    case 'editcategorie':
+    case 'edititem':
         $controller = new AdminController();
-        $controller->editCategorie();
-    break;*/                             
+        $controller->editItem();
+    break;                            
     default:
         $controller = new PublicController();
         $controller -> showError();
