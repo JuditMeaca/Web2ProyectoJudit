@@ -92,12 +92,13 @@ class AdminController{
         $description=$_POST['description'];
         $idcategorie=$_POST['idcategories'];
         
+        
         if (!empty($id) && !empty($item) && !empty($description) && !empty($idcategorie)){
            $this->modelAdmin->editProduct($id,$item, $description, $idcategorie); 
         header('Location: ' . BASE_URL . "administrator"); 
         } 
         else {
-            echo'aca no va texto'; 
+            echo'no va testo aca'; 
         }
     }
 }

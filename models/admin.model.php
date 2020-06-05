@@ -66,8 +66,8 @@ class AdminModel{
     public function editProduct($id,$item, $description, $idcategorie){
         $db = $this->createConection();
     
-        $sentencia=$db->prepare("UPDATE items SET product = ?, description = ?, id_categories_fk = ?, WHERE id_items = ?");
-        $sentencia->execute([$id, $item, $description, $idcategorie]);
+        $sentencia=$db->prepare("UPDATE items SET product = ?, description = ?, id_categories_fk = ? WHERE id_items = $id");
+        $sentencia->execute([$item, $description, $idcategorie]);
         
         }  
     }  
