@@ -10,8 +10,8 @@ class AdminController{
     private $model;
     private $modelAdmin;
     private $view;
-
-
+    
+    
     public function __construct(){
 
         $this->view = new Adminview;
@@ -59,7 +59,7 @@ class AdminController{
         header('Location: ' . BASE_URL . "administrator"); 
         } 
         else {
-            $this->view->viewErrorEmptyFields('Complete todos los campos');
+            $this->view->viewErrorEmptyFields();
         }
     }
 
@@ -100,7 +100,7 @@ class AdminController{
         header('Location: ' . BASE_URL . "administrator"); 
         } 
         else {
-            $this->view->viewErrorEmptyFields('Complete todos los campos');
+            $this->view->viewErrorEmptyFields();
         }
     }
 }
