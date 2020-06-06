@@ -10,26 +10,31 @@
             <form action="edititem" method="post">
                 <input type="hidden" name="id" value="{$item->id_items}">
                 <div>
-                <label>Nombre del producto: </label>
-                <input name="product" value="{$item->product}" type="text">
+                    <label>Nombre del producto: </label>
+                    <input name="product" value="{$item->product}" type="text">
                 </div>
                 <div>
-                <label>Descripcion</label>
-                <input name="description" value="{$item->description}" type="text">
+                    <label>Descripcion</label>
+                    <input name="description" value="{$item->description}" type="text">
                 </div>
                 <div>
-               Categoria <select name="idcategories">
-                    {foreach $allcategories as $categorie}
-                    <option value="{$categorie->id_categories}">{$categorie->categories}</option>
-                    {/foreach}
-                </select> 
-                <p>
+                    Categoria <select name="idcategories">
+                        {foreach $allcategories as $categorie}
+                        <option value="{$categorie->id_categories}">{$categorie->categories}</option>
+                        {/foreach}
+                    </select>
+                    <p>
+                        {if $error}
+                    <div class="alert alert-danger">
+                        {$error}
+                    </div>
+                    {/if}
 
-                </p>
-                <div>
-                <button type="submit" class="btn btn-primary">Editar</button>  
-                </div>
+                    </p>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </div>
             </form>
         </div>
-</div>
-</body>
+    </div>
+    </body>

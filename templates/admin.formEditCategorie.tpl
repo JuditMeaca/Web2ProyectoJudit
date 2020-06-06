@@ -7,15 +7,19 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <form action="editcategorie" method="POST" >
+            <form action="editcategorie" method="POST">
                 <div>
-                <label>Renombrar Categoria: </label>
-                <input name="newname" type="text" value="{$categorie->categories}">
-                </div>
-                <input name="id" type="hidden" value="{$categorie->id_categories}">
-                <div>
-                <button type="submit" class="btn btn-primary">Editar</button>  
-                </div>
+                    <label>Renombrar Categoria: </label>
+                    <input name="newname" type="text" value="{$categorie->categories}">
+                    <input name="id" type="hidden" value="{$categorie->id_categories}">
+                    <button type="submit" class="btn btn-primary">Editar</button>
+
+                    {if $error}
+                    <div class="alert alert-danger">
+                        {$error}
+                    </div>
+                    {/if}
+
             </form>
         </div>
     </div>

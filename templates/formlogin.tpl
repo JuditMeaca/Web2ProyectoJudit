@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-        <p class="text-center bg-dark text-white">Debe loguearse</p>
+        <p class="text-center bg-light text-dark">Debe loguearse</p>
         <form method="POST" action="verify">
             <div class="form-group">
                 <label for="exampleInputEmail1">Usuario</label>
@@ -18,7 +18,7 @@
             {$error}
         </div>
         {/if}
-        <button type="submit" class="btn btn-dark">Ingresar</button>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
         </form> 
         </div>
     </div>

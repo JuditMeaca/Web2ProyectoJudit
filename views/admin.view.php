@@ -25,8 +25,8 @@
         }
 
         public function viewFormEditCategorie($categories, $error = null){
-            $this->smarty->assign('error', $error);
             $this->smarty->assign('categorie', $categories);
+            $this->smarty->assign('error', $error);
             $this->smarty->display('admin.formEditCategorie.tpl');
         }
 
@@ -35,9 +35,13 @@
             $this->smarty->display('admin.formadditem.tpl');
         }
 
-        public function viewFormEditItem ($categories, $item){
+        public function viewFormEditItem ($categories, $item, $error = null){
+            $this->smarty->assign('error', $error);
             $this->smarty->assign('item', $item);
             $this->smarty->assign('allcategories', $categories);
             $this->smarty->display('admin.formEdititem.tpl');
+        }
+        public function viewErrorEmptyFields(){
+            $this->smarty->display('errorEmptyFields.tpl');
         }
     }

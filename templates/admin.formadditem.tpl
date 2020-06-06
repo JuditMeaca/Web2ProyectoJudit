@@ -9,22 +9,22 @@
         <div class="col-12">
             <form action="additem" method="post">
                 <div>
-                <label>Nombre del producto: </label>
-                <input name="product" type="text">
+                    <label>Nombre del producto: </label>
+                    <input name="product" type="text">
                 </div>
                 <div>
-                <label>Descripcion</label>
-                <input name="description" type="text">
+                    <label>Descripcion</label>
+                    <input name="description" type="text">
                 </div>
                 <div>
-                <label>Categoria:</label>
-                <select name="id_categories">
-                    {foreach $categories as $categorie}
-                    <option value="{$categorie->id_categories}">{$categorie->categories}</option>
-                    {/foreach}
-                </select>   
+                    <label>Categoria:</label>
+                    <select name="id_categories">
+                        {foreach $categories as $categorie}
+                        <option value="{$categorie->id_categories}">{$categorie->categories}</option>
+                        {/foreach}
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Agregar</button>  
+                <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>
     </div>

@@ -4,11 +4,13 @@ require_once 'models/admin.model.php';
 require_once 'views/admin.view.php';
 require_once 'helpers/auth.helper.php';
 
+
 class AdminController{
 
     private $model;
     private $modelAdmin;
     private $view;
+
 
     public function __construct(){
 
@@ -49,15 +51,15 @@ class AdminController{
 
     }
     public function editCategorie(){
-        $categories = $_POST['newname'];
+        $categ = $_POST['newname'];
         $id = $_POST['id'];
         
-        if (!empty($categories)){
-           $this->modelAdmin->edit($id, $categories); 
+        if (!empty($categ)){
+           $this->modelAdmin->edit($id, $categ); 
         header('Location: ' . BASE_URL . "administrator"); 
         } 
         else {
-            $this->view->viewFormEditCategorie('Campos vacios'); 
+            $this->view->viewErrorEmptyFields('Complete todos los campos');
         }
     }
 
@@ -98,7 +100,7 @@ class AdminController{
         header('Location: ' . BASE_URL . "administrator"); 
         } 
         else {
-            echo'no va testo aca'; 
+            $this->view->viewErrorEmptyFields('Complete todos los campos');
         }
     }
 }

@@ -10,12 +10,12 @@
             <form action="addcategorie" method="post">
                 <label>Categoria</label>
                 <input name="x" type="text">
-                <button type="submit" class="btn btn-primary">Agregar</button>  
+                <button type="submit" class="btn btn-primary">Agregar</button>
                 {if $error}
-        <div class="alert alert-danger">
-            {$error}
-        </div>
-        {/if}
+                <div class="alert alert-danger">
+                    {$error}
+                </div>
+                {/if}
             </form>
         </div>
         </body>
