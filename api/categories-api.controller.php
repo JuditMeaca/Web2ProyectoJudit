@@ -34,13 +34,28 @@ class CategoriesApiController{
         $categorie = $this->modelAdmin->getCategorie($idCategorie);
 
         if (!empty($categorie)){
-            return $this->view->response($categorie, 200);
+             $this->view->response($categorie, 200);
         }
 
         else{
-            return $this->view->response("No existe categoria con id {$idCategorie}", 404);
+             $this->view->response("No existe categoria con id {$idCategorie}", 404);
         }
-     
         
     }
+    public function deleteCategorie($params = []) {
+        $idCategorie = $params[':ID'];
+        $categorie = $this->modelAdmin->getCategorie($idCategorie);
+        
+        
+        if (!empty($categorie)) {
+            $this->modelAdmin->delete($idCategorie);
+            $this->view->response("La categoria con id {$idCategorie} se eliminó correctamente", 200);
+
+        }
+        else{
+            $this->view->response("No existe categoria para eliminar con id {$idCategorie}", 404);
+
+        }
+    }
+
 }
