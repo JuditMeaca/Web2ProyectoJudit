@@ -12,6 +12,7 @@ $router->addRoute('categories/:ID', 'GET', 'CategoriesApiController', 'getCatego
 //$router->addRoute('categories/:ID', 'DELETE', 'CategoriesApiController', 'deleteCategorie');
 //$router->addRoute('categories', 'POST', 'CategoriesApiController', 'newCategorie');
 
+// define la tabla de ruteo - Items
 
 // rutea
 $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);
