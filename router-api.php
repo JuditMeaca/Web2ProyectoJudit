@@ -10,7 +10,8 @@ $router = new Router();
 $router->addRoute('categories', 'GET', 'CategoriesApiController', 'getCategories');
 $router->addRoute('categories/:ID', 'GET', 'CategoriesApiController', 'getCategorie');
 $router->addRoute('categories/:ID', 'DELETE', 'CategoriesApiController', 'deleteCategorie');
-//$router->addRoute('categories', 'POST', 'CategoriesApiController', 'newCategorie');
+$router->addRoute('categories', 'POST', 'CategoriesApiController', 'newCategorie');
+$router->addRoute('categories/:ID', 'PUT', 'CategoriesApiController', 'editCategorie');
 
 // define la tabla de ruteo - Items
 

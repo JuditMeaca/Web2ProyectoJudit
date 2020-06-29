@@ -23,6 +23,8 @@ class AdminModel{
     
         $sentencia = $db->prepare("INSERT INTO categories (categories) VALUES (?)");
         $sentencia->execute([$categorie]);
+        $lastId= $db->lastInsertId();
+        return $lastId;
 
     }
  
@@ -47,7 +49,8 @@ class AdminModel{
             $db = $this->createConection();
         
             $sentencia=$db->prepare("UPDATE categories SET categories = ? WHERE categories.id_categories = ?");
-            $sentencia->execute([$categories, $id]);
+            $result = $sentencia->execute([$categories, $id]);
+            return $result;
         }    
 
     public function insertItem($item, $description, $idcategorie){
