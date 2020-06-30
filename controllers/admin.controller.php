@@ -53,13 +53,14 @@ class AdminController{
     public function editCategorie(){
         $categ = $_POST['newname'];
         $id = $_POST['id'];
+        $categories=$this->modelAdmin->getCategorie($id);
         
         if (!empty($categ)){
            $this->modelAdmin->edit($id, $categ); 
         header('Location: ' . BASE_URL . "administrator"); 
         } 
         else {
-            $this->view->viewErrorEmptyFields();
+            $this->view->viewFormEditCategorie($categories, 'Completar todos los campos');
         }
     }
 
@@ -72,9 +73,10 @@ class AdminController{
         $item=$_POST['product']; 
         $description=$_POST['description']; 
         $idcategorie=$_POST['id_categories'];
+        $categories=$this->model->getAllCategories();
 
         if(empty($item) || empty($description)){
-            $this->view->viewErrorEmptyFields();
+            $this->view->viewFormAddItem($categories, 'Completar todos los campos');
         }
 
         else{
@@ -92,7 +94,7 @@ class AdminController{
             if($success) {
                 header('Location: ' . BASE_URL . "items");
             } else {
-                $this->view->viewErrorEmptyFields();
+                $this->view->viewFormAddItem($categories, 'Completar todos los campos');
             }    
     }
     }
@@ -112,14 +114,32 @@ class AdminController{
         $item=$_POST['product'];
         $description=$_POST['description'];
         $idcategorie=$_POST['idcategories'];
+        $items = $this->model->getDetail($id);            
+        $categories = $this->model->getAllCategories();
         
         
-        if (!empty($id) && !empty($item) && !empty($description) && !empty($idcategorie)){
-           $this->modelAdmin->editProduct($id,$item, $description, $idcategorie); 
-        header('Location: ' . BASE_URL . "administrator"); 
-        } 
+        if (empty($item) || empty($description)){
+            $this->view->viewFormEditItem($categories,$items, 'Complete todos los campos');
+        }
         else {
-            $this->view->viewErrorEmptyFields();
+            if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" || 
+                    $_FILES['input_name']['type'] == "image/png"){
+                    $success = $this->modelAdmin->editProduct($id,$item, $description, $idcategorie, $_FILES['input_name']['tmp_name']); 
+        }
+        else{
+                $success = $this->modelAdmin->editProduct($id,$item, $description, $idcategorie);
+
+        }
+         if ($success){
+            header('Location: ' . BASE_URL . "administrator"); 
+         }   
+         
+        else {
+            $this->view->viewFormEditItem($categories,$items, 'Complete todos los campos');
         }
     }
+}
+
+
+
 }

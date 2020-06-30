@@ -31,8 +31,9 @@
             $this->smarty->display('admin.formEditCategorie.tpl');
         }
 
-        public function viewFormAddItem($categories){
+        public function viewFormAddItem($categories, $error = null){
             $this->smarty->assign('categories', $categories);
+            $this->smarty->assign('error', $error);
             $this->smarty->display('admin.formadditem.tpl');
         }
 
@@ -42,7 +43,5 @@
             $this->smarty->assign('allcategories', $categories);
             $this->smarty->display('admin.formEdititem.tpl');
         }
-        public function viewErrorEmptyFields(){
-            $this->smarty->display('errorEmptyFields.tpl');
-        }
+    
     }

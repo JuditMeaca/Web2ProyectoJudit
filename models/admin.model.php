@@ -77,12 +77,17 @@ class AdminModel{
         $sentencia = $db->prepare("DELETE FROM items WHERE items.id_items = ?");
         $sentencia->execute([$iditem]);
     }
-    public function editProduct($id,$item, $description, $idcategorie){
-        $db = $this->createConection();
-    
-        $sentencia=$db->prepare("UPDATE items SET product = ?, description = ?, id_categories_fk = ? WHERE id_items = $id");
-        $sentencia->execute([$item, $description, $idcategorie]);
+    public function editProduct($id,$item, $description, $idcategorie, $image = null){
+        $pathImg=null;
+        if ($image)
+            $pathImg = $this->uploadImage($image);
         
-        }  
+    
+        $sentencia=$this->createConection()->prepare("UPDATE items SET product = ?, description = ?, id_categories_fk = ? , image = ? WHERE id_items = $id");
+        return $sentencia->execute([$item, $description, $idcategorie, $pathImg]);
+        
+        }
+        
+        
     }  
 

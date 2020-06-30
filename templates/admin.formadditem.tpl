@@ -29,6 +29,11 @@
                     Imagen: <input type="file" name="input_name" id="imageToUpload" >
                     </div>
                     <p></p>
+                    {if $error}
+                        <div class="alert alert-danger">
+                            {$error}
+                        </div>
+                        {/if}
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>
