@@ -73,10 +73,29 @@ class AdminController{
         $description=$_POST['description']; 
         $idcategorie=$_POST['id_categories'];
 
-        $this->modelAdmin->insertItem($item, $description, $idcategorie);
-        header('Location: ' . BASE_URL . "administrator");
-    }
+        if(empty($item) || empty($description)){
+            $this->view->viewErrorEmptyFields();
+        }
 
+        else{
+
+            if($_FILES['input_name']['type'] == "image/jpg" ||
+            $_FILES['input_name']['type'] == "image/jpeg" ||
+            $_FILES['input_name']['type'] == "image/png"){
+                
+            $success = $this->modelAdmin->insertItem($item, $description, $idcategorie, $_FILES['input_name']['tmp_name']);
+            } 
+                else {
+                $success = $this->modelAdmin->insertItem($item, $description, $idcategorie);
+            }
+        
+            if($success) {
+                header('Location: ' . BASE_URL . "items");
+            } else {
+                $this->view->viewErrorEmptyFields();
+            }    
+    }
+    }
     public function deleteItem($iditem){
         $this->modelAdmin->deleteItem($iditem);
         header('Location: ' . BASE_URL . "administrator");

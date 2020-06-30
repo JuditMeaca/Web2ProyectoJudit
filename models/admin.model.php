@@ -53,11 +53,22 @@ class AdminModel{
             return $result;
         }    
 
-    public function insertItem($item, $description, $idcategorie){
-        $db = $this->createConection();
-    
-        $sentencia = $db->prepare("INSERT INTO items (product, description, id_categories_fk) VALUES (?,?,?)");
-        $sentencia->execute([$item, $description, $idcategorie]);
+    public function insertItem($item, $description, $idcategorie, $image = null){
+
+        $pathImg=null; 
+
+        if ($image)
+            $pathImg = $this->uploadImage($image);
+            
+        
+        $sentencia = $this->createConection()->prepare("INSERT INTO items (product, description, id_categories_fk, image) VALUES (?,?,?,?)");
+        return $sentencia->execute([$item, $description, $idcategorie, $pathImg]);
+    }
+
+    private function uploadImage($image){
+        $target = 'upload/items/' . uniqid() . '.jpg';
+        move_uploaded_file($image, $target); 
+        return $target;
     }
 
     public function deleteItem($iditem){

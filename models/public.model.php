@@ -55,7 +55,7 @@ class PublicModel{
         $db=$this->createConection();
 
         $sentencia= $db->prepare("SELECT categories.categories AS categories, items.id_items, 
-        items.product, items.description FROM items INNER JOIN categories ON 
+        items.product, items.description, items.image FROM items INNER JOIN categories ON 
         items.id_categories_fk = categories.id_categories WHERE items.id_items = ?");
         $sentencia->execute([$id]);
         $detail=$sentencia->fetch(PDO::FETCH_OBJ);

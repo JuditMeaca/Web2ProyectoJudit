@@ -7,7 +7,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <form action="edititem" method="post">
+            <form action="edititem" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="{$item->id_items}">
                 <div>
                     <label>Nombre del producto: </label>
@@ -23,6 +23,10 @@
                         <option value="{$categorie->id_categories}">{$categorie->categories}</option>
                         {/foreach}
                     </select>
+                    <p></p>
+                    <div>
+                    Imagen: <input type="file" name="input_name" id="imageToUpload" >
+                    </div>
                     <p>
                         {if $error}
                     <div class="alert alert-danger">
@@ -34,6 +38,7 @@
                     <div>
                         <button type="submit" class="btn btn-primary">Editar</button>
                     </div>
+
             </form>
         </div>
     </div>

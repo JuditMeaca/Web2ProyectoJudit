@@ -7,7 +7,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <form action="additem" method="post">
+            <form action="additem" method="post" enctype="multipart/form-data">
                 <div>
                     <label>Nombre del producto: </label>
                     <input name="product" type="text">
@@ -24,6 +24,11 @@
                         {/foreach}
                     </select>
                 </div>
+                <div>
+                <div>
+                    Imagen: <input type="file" name="input_name" id="imageToUpload" >
+                    </div>
+                    <p></p>
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </form>
         </div>
