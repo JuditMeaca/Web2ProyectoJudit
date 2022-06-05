@@ -53,7 +53,7 @@ class AdminController{
         $id = $_POST['id'];
         
         if (!empty($categories)){
-           $this->modelAdmin->edit ($id, $categories); 
+           $this->modelAdmin->edit($id, $categories); 
         header('Location: ' . BASE_URL . "administrator"); 
         } 
         else {

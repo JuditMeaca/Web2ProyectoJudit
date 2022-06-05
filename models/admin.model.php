@@ -36,14 +36,14 @@ class AdminModel{
     public function getCategorie($id){
             $db = $this->createConection();
         
-            $sentencia = $db->prepare("SELECT id_categories, categories FROM categories WHERE id_categories = ?");
+            $sentencia = $db->prepare("SELECT * FROM categories WHERE id_categories = ?");
             $sentencia->execute([$id]);
             $categories = $sentencia->fetch(PDO::FETCH_OBJ); 
             
             return $categories;
     
         }
-    public function edit($categories, $id){
+    public function edit($id, $categories){
             $db = $this->createConection();
         
             $sentencia=$db->prepare("UPDATE categories SET categories = ? WHERE categories.id_categories = ?");
@@ -67,16 +67,8 @@ class AdminModel{
         $db = $this->createConection();
     
         $sentencia=$db->prepare("UPDATE items SET product = ?, description = ?, id_categories_fk = ?, WHERE id_items = ?");
-        $sentencia->execute([$item, $description, $id, $idcategorie]);
+        $sentencia->execute([$id, $item, $description, $idcategorie]);
         
         }  
     }  
 
-    
-/*
-    public function deleteProduct($idproduct){
-        $db = $this->createConection();
-    
-        $sentencia = $db->prepare("DELETE FROM items WHERE id_items = ?");
-        $sentencia->execute([$idproduct]);
-    }*/
